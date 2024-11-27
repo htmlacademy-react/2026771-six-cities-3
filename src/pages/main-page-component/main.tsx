@@ -1,46 +1,31 @@
 import Card from "../../components/card";
-import { CARD_MOCK_DATA } from "../../const";
+import CityName from "../../components/city-name";
+import SortTypes from "../../components/sort-types";
+import Header from "../../components/header";
+import { CARD_MOCK_DATA, SITIES, SORT_TYPES, USER_DATA } from "../../const";
 
 type MainPageProps = {
   PlacesCount: number;
 }
+
 function MainPage({PlacesCount}: MainPageProps): JSX.Element {
   return (
+    <div className="page page--gray page--main">
+          <Header
+          headerUserName={USER_DATA.userName}
+          favoriteCount={USER_DATA.favoriteCount}
+          />
     <main className="page__main page__main--index">
   <h1 className="visually-hidden">Cities</h1>
   <div className="tabs">
     <section className="locations container">
       <ul className="locations__list tabs__list">
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item" href="#">
-            <span>Paris</span>
-          </a>
-        </li>
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item" href="#">
-            <span>Cologne</span>
-          </a>
-        </li>
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item" href="#">
-            <span>Brussels</span>
-          </a>
-        </li>
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item tabs__item--active">
-            <span>Amsterdam</span>
-          </a>
-        </li>
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item" href="#">
-            <span>Hamburg</span>
-          </a>
-        </li>
-        <li className="locations__item">
-          <a className="locations__item-link tabs__item" href="#">
-            <span>Dusseldorf</span>
-          </a>
-        </li>
+      {SITIES.map((city) => (
+          <CityName
+          key={city}
+          cityName={city}
+          />
+        ))}
       </ul>
     </section>
   </div>
@@ -58,18 +43,12 @@ function MainPage({PlacesCount}: MainPageProps): JSX.Element {
             </svg>
           </span>
           <ul className="places__options places__options--custom places__options--opened">
-            <li className="places__option places__option--active" tabIndex={0}>
-              Popular
-            </li>
-            <li className="places__option" tabIndex={0}>
-              Price: low to high
-            </li>
-            <li className="places__option" tabIndex={0}>
-              Price: high to low
-            </li>
-            <li className="places__option" tabIndex={0}>
-              Top rated first
-            </li>
+          {SORT_TYPES.map((sort) => (
+          <SortTypes
+          key={sort}
+          sortType={sort}
+          />
+        ))}
           </ul>
         </form>
         <div className="cities__places-list places__list tabs__content">
@@ -92,6 +71,8 @@ function MainPage({PlacesCount}: MainPageProps): JSX.Element {
     </div>
   </div>
 </main>
+</div>
   );
 }
+
 export default MainPage;

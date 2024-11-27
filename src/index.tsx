@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {SETTING} from './const';
+import {SETTING_CARD} from './const';
 import App from './components/app';
 
 const root = ReactDOM.createRoot(
@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
      <App
-      PlacesCount = {SETTING.PlacesCount}
+      PlacesCount = {SETTING_CARD.PlacesCount}
     />
   </React.StrictMode>
 );

@@ -1,7 +1,3 @@
-export const SETTING = {
-  PlacesCount: 312
-};
-
 export const SETTING_CARD = {
   PlacesCount: 312
 };
@@ -2808,3 +2804,14 @@ export const CARD_MOCK_DATA: CardData[] = [
     "rating": 3.8
   }
 ];
+
+
+export interface UserData {
+  userName: string;
+  favoriteCount: number;
+}
+
+export const USER_DATA: UserData = {
+  userName: 'Admin.admin000@yandex.ru',
+  favoriteCount: 0,
+};

@@ -1,5 +1,5 @@
 type CardProps = {
-  id: string;
+  id?: string;
   title: string;
   type: string;
   price: number;
@@ -7,6 +7,7 @@ type CardProps = {
   isPremium: boolean;
   rating: number;
 };
+
 function Card({title, type, price, previewImage, isPremium, rating}: CardProps): JSX.Element {
   return (
     <article className="cities__card place-card">
@@ -53,4 +54,5 @@ function Card({title, type, price, previewImage, isPremium, rating}: CardProps):
     </article>
   );
 }
+
 export default Card;
