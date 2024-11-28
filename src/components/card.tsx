@@ -8,9 +8,9 @@ type CardProps = {
   rating: number;
 };
 
-function Card({title, type, price, previewImage, isPremium, rating}: CardProps): JSX.Element {
+function Card({id, title, type, price, previewImage, isPremium, rating}: CardProps): JSX.Element {
   return (
-    <article className="cities__card place-card">
+    <article className="cities__card place-card" id={id}>
       {isPremium && (
         <div className="place-card__mark">
           <span>Premium</span>

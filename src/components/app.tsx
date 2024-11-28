@@ -1,4 +1,4 @@
-import MainPage from "../pages/main-page-component/main";
+import MainPage from '../pages/main-page-component/main';
 
 type MainPageProps = {
   PlacesCount: number;
