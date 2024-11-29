@@ -1,5 +1,4 @@
 type CommentProps = {
-  id: string;
   date: string;
   user: {
   name: string;
@@ -9,9 +8,9 @@ type CommentProps = {
   rating: number;
 };
 
-function Comment({id, date, user, comment, rating}: CommentProps): JSX.Element {
+function Comment({date, user, comment, rating}: CommentProps): JSX.Element {
   return (
-    <li className="reviews__item" id={id}>
+    <li className="reviews__item">
       <div className="reviews__user user">
         <div className="reviews__avatar-wrapper user__avatar-wrapper">
           <img
