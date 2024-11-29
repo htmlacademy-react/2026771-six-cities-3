@@ -147,7 +147,6 @@ function OfferPage(): JSX.Element {
                   {COMMENT_MOCK_DATA.map((comment) => (
                     <Comment
                       key={comment.id}
-                      id={comment.id}
                       date={comment.date}
                       user={comment.user}
                       comment={comment.comment}
