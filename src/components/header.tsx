@@ -1,6 +1,6 @@
 type HeaderProps = {
-  headerUserName: string;
-  favoriteCount: number;
+  headerUserName?: string;
+  favoriteCount?:number;
 };
 
 function Header({headerUserName, favoriteCount}: HeaderProps): JSX.Element {

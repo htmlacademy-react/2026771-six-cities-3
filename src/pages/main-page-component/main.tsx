@@ -8,7 +8,7 @@ type MainPageProps = {
   PlacesCount: number;
 }
 
-function MainPage({PlacesCount}: MainPageProps): JSX.Element {
+function Main({PlacesCount}: MainPageProps): JSX.Element {
   return (
     <div className="page page--gray page--main">
       <Header
@@ -75,4 +75,4 @@ function MainPage({PlacesCount}: MainPageProps): JSX.Element {
   );
 }
 
-export default MainPage;
+export default Main;
