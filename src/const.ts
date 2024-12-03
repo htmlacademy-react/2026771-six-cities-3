@@ -18,6 +18,19 @@ export const SORT_TYPES: string[] = [
   'Top rated first',
 ];
 
+export enum AppRoute {
+  Login = '/login',
+  Favorites = '/favorites',
+  Offer = '/offer/:id',
+  Main = '/',
+}
+
+export enum AuthorizationStatus {
+  Auth = 'AUTH',
+  NoAuth = 'NO_AUTH',
+  Unknown = 'UNKNOWN',
+}
+
 export interface CardData {
   id: string;
   title: string;
