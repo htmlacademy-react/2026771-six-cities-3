@@ -5,7 +5,7 @@ import { CARD_NEIGHBOURHOOD_MOCK_DATA, COMMENT_MOCK_DATA, USER_DATA } from '../.
 
 const isFormValid = false;
 
-function OfferPage(): JSX.Element {
+function Offer(): JSX.Element {
   return (
     <div className="page">
       <Header
@@ -294,4 +294,4 @@ function OfferPage(): JSX.Element {
   );
 }
 
-export default OfferPage;
+export default Offer;
