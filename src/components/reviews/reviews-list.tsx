@@ -9,16 +9,16 @@ function ReviewsList({ commentData }: ReviewsListProps): JSX.Element {
 
   return (
     <ul className="reviews__list">
-                  {commentData.map((comment) => (
-                    <Comment
-                      key={comment.id}
-                      date={comment.date}
-                      user={comment.user}
-                      comment={comment.comment}
-                      rating={comment.rating}
-                    />
-                  ))}
-                </ul>
+      {commentData.map((comment) => (
+        <Comment
+          key={comment.id}
+          date={comment.date}
+          user={comment.user}
+          comment={comment.comment}
+          rating={comment.rating}
+        />
+      ))}
+    </ul>
   );
 }
 

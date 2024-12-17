@@ -35,9 +35,9 @@ function Main({ userData }: MainPageProps): JSX.Element {
         </div>
         <div className="cities">
           <OfferList
-           cardsData={CARD_MOCK_DATA}
-           placesCount={CARD_MOCK_DATA.length}
-           />
+            cardsData={CARD_MOCK_DATA}
+            placesCount={CARD_MOCK_DATA.length}
+          />
         </div>
       </main>
     </div>

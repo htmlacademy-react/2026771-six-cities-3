@@ -29,7 +29,7 @@ function App({userData, offerData, cardsData, commentData, cardNeighbourhoodData
           path={AppRoute.Login}
           element={<Login />}
         />
-          <Route
+        <Route
           path={AppRoute.Offer}
           element={
             <Offer
@@ -41,13 +41,13 @@ function App({userData, offerData, cardsData, commentData, cardNeighbourhoodData
           }
         />
         <Route
-  path={AppRoute.Favorites}
-  element={
-    <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
-      <Favorites favorites={cardsData.filter((card) => card.isFavorite)} />
-    </PrivateRoute>
-  }
-/>
+          path={AppRoute.Favorites}
+          element={
+            <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
+              <Favorites favorites={cardsData.filter((card) => card.isFavorite)} />
+            </PrivateRoute>
+          }
+        />
         <Route
           path="*"
           element={<Notfound />}

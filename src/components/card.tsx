@@ -14,17 +14,18 @@ type CardProps = {
   isActive: boolean;
 };
 
-function Card({id, title, type, price, previewImage, isPremium, rating,  onMouseEnter, onMouseLeave}: CardProps): JSX.Element {
+function Card({id, title, type, price, previewImage, isPremium, rating, onMouseEnter, onMouseLeave}: CardProps): JSX.Element {
   return (
     <article className="cities__card place-card" onMouseEnter={onMouseEnter}
-    onMouseLeave={onMouseLeave}>
+      onMouseLeave={onMouseLeave}
+    >
       {isPremium && (
         <div className="place-card__mark">
           <span>Premium</span>
         </div>
       )}
       <div className="cities__image-wrapper place-card__image-wrapper">
-      <Link to={`${AppRoute.Offer}${id}`}>
+        <Link to={`${AppRoute.Offer}${id}`}>
           <img
             className="place-card__image"
             src={previewImage}
@@ -54,7 +55,7 @@ function Card({id, title, type, price, previewImage, isPremium, rating,  onMouse
           </div>
         </div>
         <h2 className="place-card__name">
-        <Link to={`${AppRoute.Offer}/${id}`}>{title}</Link>
+          <Link to={`${AppRoute.Offer}/${id}`}>{title}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>

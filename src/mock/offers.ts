@@ -1,4 +1,4 @@
-import { CommentTypeData, CardTypeData, UserTypeData, OfferTypeData, FavoritesTypeData } from "../components/type";
+import { CommentTypeData, CardTypeData, UserTypeData, OfferTypeData, FavoritesTypeData } from '../components/type';
 
 export const CARD_MOCK_DATA: CardTypeData[] = [
   {
@@ -427,53 +427,53 @@ export const CARD_NEIGHBOURHOOD_MOCK_DATA: CardTypeData[] = [
 
 export const OFFER_MOCK_DATA: OfferTypeData =
 {
-  "id": "4ea6510a-0b4f-423f-9937-aaee1d46f796",
-  "title": "Canal View Prinsengracht",
-  "description": "Design interior in most sympathetic area! Complitely renovated, well-equipped, cosy studio in idyllic, over 100 years old wooden house. Calm street, fast connection to center and airport.",
-  "type": "apartment",
-  "price": 482,
-  "images": [
-    "https://15.design.htmlacademy.pro/static/hotel/9.jpg",
-    "https://15.design.htmlacademy.pro/static/hotel/17.jpg",
-    "https://15.design.htmlacademy.pro/static/hotel/11.jpg",
-    "https://15.design.htmlacademy.pro/static/hotel/10.jpg",
-    "https://15.design.htmlacademy.pro/static/hotel/13.jpg",
-    "https://15.design.htmlacademy.pro/static/hotel/20.jpg"
+  'id': '4ea6510a-0b4f-423f-9937-aaee1d46f796',
+  'title': 'Canal View Prinsengracht',
+  'description': 'Design interior in most sympathetic area! Complitely renovated, well-equipped, cosy studio in idyllic, over 100 years old wooden house. Calm street, fast connection to center and airport.',
+  'type': 'apartment',
+  'price': 482,
+  'images': [
+    'https://15.design.htmlacademy.pro/static/hotel/9.jpg',
+    'https://15.design.htmlacademy.pro/static/hotel/17.jpg',
+    'https://15.design.htmlacademy.pro/static/hotel/11.jpg',
+    'https://15.design.htmlacademy.pro/static/hotel/10.jpg',
+    'https://15.design.htmlacademy.pro/static/hotel/13.jpg',
+    'https://15.design.htmlacademy.pro/static/hotel/20.jpg'
   ],
-  "city": {
-    "name": "Paris",
-    "location": {
-      "latitude": 48.85661,
-      "longitude": 2.351499,
-      "zoom": 13
+  'city': {
+    'name': 'Paris',
+    'location': {
+      'latitude': 48.85661,
+      'longitude': 2.351499,
+      'zoom': 13
     }
   },
-  "location": {
-    "latitude": 48.868610000000004,
-    "longitude": 2.342499,
-    "zoom": 16
+  'location': {
+    'latitude': 48.868610000000004,
+    'longitude': 2.342499,
+    'zoom': 16
   },
-  "goods": [
-    "Dishwasher",
-    "Air conditioning",
-    "Laptop friendly workspace",
-    "Kitchen",
-    "Heating",
-    "Towels",
-    "Cable TV",
-    "Wi-Fi",
-    "Coffee machine"
+  'goods': [
+    'Dishwasher',
+    'Air conditioning',
+    'Laptop friendly workspace',
+    'Kitchen',
+    'Heating',
+    'Towels',
+    'Cable TV',
+    'Wi-Fi',
+    'Coffee machine'
   ],
-  "host": {
-    "isPro": true,
-    "name": "Angelina",
-    "avatarUrl": "https://15.design.htmlacademy.pro/static/host/avatar-angelina.jpg"
+  'host': {
+    'isPro': true,
+    'name': 'Angelina',
+    'avatarUrl': 'https://15.design.htmlacademy.pro/static/host/avatar-angelina.jpg'
   },
-  "isPremium": false,
-  "isFavorite": false,
-  "rating": 5,
-  "bedrooms": 32,
-  "maxAdults": 17
+  'isPremium': false,
+  'isFavorite': false,
+  'rating': 5,
+  'bedrooms': 32,
+  'maxAdults': 17
 };
 
 export const COMMENT_MOCK_DATA: CommentTypeData[] = [
@@ -500,51 +500,51 @@ export const COMMENT_MOCK_DATA: CommentTypeData[] = [
     'rating': 4
   }];
 
-  export const FAVORITES_MOCK_DATA: FavoritesTypeData[] =[
-    {
-    "id": "6af6f711-c28d-4121-82cd-e0b462a27f00",
-    "title": "Beautiful & luxurious studio at great location",
-    "type": "apartment",
-    "price": 120,
-    "city": {
-    "name": "Amsterdam",
-    "location": {
-    "latitude": 52.35514938496378,
-    "longitude": 4.673877537499948,
-    "zoom": 8
-    }
-    },
-    "location": {
-    "latitude": 52.35514938496378,
-    "longitude": 4.673877537499948,
-    "zoom": 8
-    },
-    "isFavorite": false,
-    "isPremium": false,
-    "rating": 4,
-    "previewImage": "https://url-to-image/image.png"
-    },
-    {
-      "id": "6af6f711-c28d-4121-82cd-e0b462a27f00",
-      "title": "Beautiful & luxurious studio at great location",
-      "type": "apartment",
-      "price": 190.7,
-      "city": {
-      "name": "Amsterdam",
-      "location": {
-      "latitude": 52.35514938496378,
-      "longitude": 4.673877537499948,
-      "zoom": 8
+export const FAVORITES_MOCK_DATA: FavoritesTypeData[] = [
+  {
+    'id': '6af6f711-c28d-4121-82cd-e0b462a27f00',
+    'title': 'Beautiful & luxurious studio at great location',
+    'type': 'apartment',
+    'price': 120,
+    'city': {
+      'name': 'Amsterdam',
+      'location': {
+        'latitude': 52.35514938496378,
+        'longitude': 4.673877537499948,
+        'zoom': 8
       }
-      },
-      "location": {
-      "latitude": 52.35514938496378,
-      "longitude": 4.673877537499948,
-      "zoom": 8
-      },
-      "isFavorite": false,
-      "isPremium": false,
-      "rating": 4,
-      "previewImage": "https://url-to-image/image.png"
+    },
+    'location': {
+      'latitude': 52.35514938496378,
+      'longitude': 4.673877537499948,
+      'zoom': 8
+    },
+    'isFavorite': false,
+    'isPremium': false,
+    'rating': 4,
+    'previewImage': 'https://url-to-image/image.png'
+  },
+  {
+    'id': '6af6f711-c28d-4121-82cd-e0b462a27f00',
+    'title': 'Beautiful & luxurious studio at great location',
+    'type': 'apartment',
+    'price': 190.7,
+    'city': {
+      'name': 'Amsterdam',
+      'location': {
+        'latitude': 52.35514938496378,
+        'longitude': 4.673877537499948,
+        'zoom': 8
       }
-    ]
+    },
+    'location': {
+      'latitude': 52.35514938496378,
+      'longitude': 4.673877537499948,
+      'zoom': 8
+    },
+    'isFavorite': false,
+    'isPremium': false,
+    'rating': 4,
+    'previewImage': 'https://url-to-image/image.png'
+  }
+];
