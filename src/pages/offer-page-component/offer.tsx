@@ -29,11 +29,11 @@ function Offer({ userData, offerData, commentData, cardNeighbourhoodData }: Offe
         <section className="offer">
           <div className="offer__gallery-container container">
             <div className="offer__gallery">
-              {images.map((image, index) => (
-                <div className="offer__image-wrapper" key={index}>
-                  <img className="offer__image" src={image} alt={`Offer image ${index + 1}`} />
+              {images.map((image) => (
+                <div className="offer__image-wrapper" key={image}>
+                  <img className="offer__image" src={image} alt={'Offer image'} />
                 </div>
-              ))}
+              ))};
             </div>
           </div>
           <div className="offer__container container">
@@ -71,8 +71,8 @@ function Offer({ userData, offerData, commentData, cardNeighbourhoodData }: Offe
               <div className="offer__inside">
                 <h2 className="offer__inside-title">What’s inside</h2>
                 <ul className="offer__inside-list">
-                  {goods.map((item, index) => (
-                    <li className="offer__inside-item" key={index}>
+                  {goods.map((item) => (
+                    <li className="offer__inside-item" key={item}>
                       {item}
                     </li>
                   ))}

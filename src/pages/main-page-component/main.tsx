@@ -3,13 +3,10 @@ import Header from '../../components/header';
 import OfferList from '../../components/offers-list';
 import { CITIES } from '../../const';
 import { CARD_MOCK_DATA } from '../../mock/offers';
-import { UserTypeData, CardTypeData } from '../../components/type';
+import { UserTypeData } from '../../components/type';
 
 type MainPageProps = {
   userData: UserTypeData;
-  cardsData: CardTypeData[];
-  placesCount: number;
-
 }
 
 function Main({ userData }: MainPageProps): JSX.Element {

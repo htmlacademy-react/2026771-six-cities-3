@@ -16,6 +16,14 @@ function ReviewForm(): JSX.Element {
   const isTextValid = reviewText.length >= 50 && reviewText.length <= 300;
   const isFormValid = isTextValid && rating !== null;
 
+  const ratingTitles: { [key: number]: string } = {
+    5: 'perfect',
+    4: 'good',
+    3: 'not bad',
+    2: 'badly',
+    1: 'terribly',
+  };
+
   return (
     <form className="reviews__form form" action="#" method="post">
       <label className="reviews__label form__label" htmlFor="review">
@@ -36,7 +44,7 @@ function ReviewForm(): JSX.Element {
             <label
               htmlFor={`${star}-stars`}
               className="reviews__rating-label form__rating-label"
-              title={star === 5 ? 'perfect' : star === 4 ? 'good' : star === 3 ? 'not bad' : star === 2 ? 'badly' : 'terribly'}
+              title={ratingTitles[star]}
             >
               <svg className="form__star-image" width={37} height={33}>
                 <use xlinkHref="#icon-star" />

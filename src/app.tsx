@@ -23,7 +23,7 @@ function App({userData, offerData, cardsData, commentData, cardNeighbourhoodData
       <Routes>
         <Route
           path={AppRoute.Main}
-          element={<Main userData={userData} placesCount={cardsData.length} cardsData={cardsData} />}
+          element={<Main userData={userData}/>}
         />
         <Route
           path={AppRoute.Login}

@@ -14,9 +14,10 @@ type CardProps = {
   isActive: boolean;
 };
 
-function Card({id, title, type, price, previewImage, isPremium, rating, onMouseEnter, onMouseLeave}: CardProps): JSX.Element {
+function Card({id, title, type, price, previewImage, isPremium, rating, isActive, onMouseEnter, onMouseLeave}: CardProps): JSX.Element {
   return (
-    <article className="cities__card place-card" onMouseEnter={onMouseEnter}
+    <article className={`cities__card place-card ${isActive ? 'place-card--active' : ''}`}
+      onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       {isPremium && (
