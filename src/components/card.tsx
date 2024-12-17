@@ -1,22 +1,32 @@
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../const';
+
 type CardProps = {
+  id: string;
   title: string;
   type: string;
   price: number;
   previewImage: string;
   isPremium: boolean;
   rating: number;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+  isActive: boolean;
 };
 
-function Card({title, type, price, previewImage, isPremium, rating}: CardProps): JSX.Element {
+function Card({id, title, type, price, previewImage, isPremium, rating, isActive, onMouseEnter, onMouseLeave}: CardProps): JSX.Element {
   return (
-    <article className="cities__card place-card">
+    <article className={`cities__card place-card ${isActive ? 'place-card--active' : ''}`}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       {isPremium && (
         <div className="place-card__mark">
           <span>Premium</span>
         </div>
       )}
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
+        <Link to={`${AppRoute.Offer}${id}`}>
           <img
             className="place-card__image"
             src={previewImage}
@@ -24,7 +34,7 @@ function Card({title, type, price, previewImage, isPremium, rating}: CardProps):
             height={200}
             alt="Place image"
           />
-        </a>
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
@@ -46,7 +56,7 @@ function Card({title, type, price, previewImage, isPremium, rating}: CardProps):
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{title}</a>
+          <Link to={`${AppRoute.Offer}/${id}`}>{title}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
