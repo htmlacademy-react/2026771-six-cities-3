@@ -1,9 +1,8 @@
 import { useState } from 'react';
-// import { useParams } from 'react-router-dom';
 import Card from '../../components/card';
 import Header from '../../components/header';
-import Comment from '../../components/comment';
-import { UserTypeData, CommentTypeData, CardTypeData, OfferTypeData,  } from '../../components/type';
+import { Reviews } from '../../components/review';
+import { UserTypeData, CommentTypeData, CardTypeData, OfferTypeData } from '../../components/type';
 
 type OfferProps = {
   userData: UserTypeData;
@@ -12,12 +11,8 @@ type OfferProps = {
   cardNeighbourhoodData: CardTypeData[];
 };
 
-const isFormValid = false;
-
 function Offer({ userData, offerData, commentData, cardNeighbourhoodData }: OfferProps): JSX.Element {
   const [activeCard, setActiveCard] = useState<string | null>(null);
-  // const { id } = useParams<{ id: string }>();
-
   const handleMouseEnter = (id: string) => {
     setActiveCard(id);
   };
@@ -25,12 +20,6 @@ function Offer({ userData, offerData, commentData, cardNeighbourhoodData }: Offe
   const handleMouseLeave = () => {
     setActiveCard(null);
   };
-
-  // const currentOffer = offerData.find((offer) => offer.id === id);
-
-  // if (!currentOffer) {
-  //   return <div>Offer not found</div>;
-  // }
 
   const { title, description, type, price, images, goods, host, isPremium, rating, bedrooms, maxAdults } = offerData;
   return (
@@ -116,42 +105,7 @@ function Offer({ userData, offerData, commentData, cardNeighbourhoodData }: Offe
                 <h2 className="reviews__title">
                   Reviews · <span className="reviews__amount">{commentData.length}</span>
                 </h2>
-                <ul className="reviews__list">
-                  {commentData.map((comment) => (
-                    <Comment
-                      key={comment.id}
-                      date={comment.date}
-                      user={comment.user}
-                      comment={comment.comment}
-                      rating={comment.rating}
-                    />
-                  ))}
-                </ul>
-                <form className="reviews__form form" action="#" method="post">
-                  <label className="reviews__label form__label" htmlFor="review">
-                    Your review
-                  </label>
-                  <textarea
-                    className="reviews__textarea form__textarea"
-                    id="review"
-                    name="review"
-                    placeholder="Tell how was your stay, what you like and what can be improved"
-                  />
-                  <div className="reviews__button-wrapper">
-                    <p className="reviews__help">
-                      To submit review please make sure to set a{' '}
-                      <span className="reviews__star">rating</span> and describe your stay with at
-                      least <b className="reviews__text-amount">50 characters</b>.
-                    </p>
-                    <button
-                      className="reviews__submit form__submit button"
-                      type="submit"
-                      disabled={!isFormValid}
-                    >
-                      Submit
-                    </button>
-                  </div>
-                </form>
+                <Reviews commentData={commentData} />
               </section>
             </div>
           </div>

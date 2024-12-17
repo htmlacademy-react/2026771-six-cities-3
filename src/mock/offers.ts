@@ -425,7 +425,7 @@ export const CARD_NEIGHBOURHOOD_MOCK_DATA: CardTypeData[] = [
   }
 ];
 
-export const OFFER_MOCK_DATA: OfferTypeData[] =[
+export const OFFER_MOCK_DATA: OfferTypeData =
 {
   "id": "4ea6510a-0b4f-423f-9937-aaee1d46f796",
   "title": "Canal View Prinsengracht",
@@ -474,7 +474,7 @@ export const OFFER_MOCK_DATA: OfferTypeData[] =[
   "rating": 5,
   "bedrooms": 32,
   "maxAdults": 17
-}];
+};
 
 export const COMMENT_MOCK_DATA: CommentTypeData[] = [
   {

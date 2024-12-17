@@ -10,13 +10,14 @@ import { OfferTypeData, CardTypeData, UserTypeData, CommentTypeData } from './co
 
 type AppProps = {
   userData: UserTypeData;
-  offerData: OfferTypeData[];
+  offerData: OfferTypeData;
   cardsData: CardTypeData[];
   commentData: CommentTypeData[];
   cardNeighbourhoodData: CardTypeData[];
 }
 
 function App({userData, offerData, cardsData, commentData, cardNeighbourhoodData}: AppProps): JSX.Element {
+
   return (
     <BrowserRouter>
       <Routes>
@@ -33,7 +34,7 @@ function App({userData, offerData, cardsData, commentData, cardNeighbourhoodData
           element={
             <Offer
               userData={userData}
-              offerData={offerData[0]}
+              offerData={offerData}
               commentData={commentData}
               cardNeighbourhoodData={cardNeighbourhoodData}
             />
