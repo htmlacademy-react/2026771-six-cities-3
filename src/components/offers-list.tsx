@@ -12,12 +12,8 @@ type OfferListProps = {
 function OfferList({ cardsData, placesCount }: OfferListProps): JSX.Element {
   const [activeCard, setActiveCard] = useState<string | null>(null);
 
-  const handleMouseEnter = (id: string) => {
+  const handleMouseMove = (id: string | null) => {
     setActiveCard(id);
-  };
-
-  const handleMouseLeave = () => {
-    setActiveCard(null);
   };
 
   return (
@@ -40,25 +36,19 @@ function OfferList({ cardsData, placesCount }: OfferListProps): JSX.Element {
           </ul>
         </form>
         <div className="cities__places-list places__list tabs__content">
-          {cardsData.map((card) => (
+          {cardsData.map((offer) => (
             <Card
-              key={card.id}
-              id={card.id}
-              title={card.title}
-              type={card.type}
-              price={card.price}
-              previewImage={card.previewImage}
-              isPremium={card.isPremium}
-              rating={card.rating}
-              onMouseEnter={() => handleMouseEnter(card.id)}
-              onMouseLeave={handleMouseLeave}
-              isActive={activeCard === card.id}
+              key={offer.id}
+              offer={offer}
+              onMouseMove={() => handleMouseMove(offer.id)}
+              variant="vertical"
+              isActive={activeCard === offer.id}
             />
           ))}
         </div>
       </section>
       <div className="cities__right-section">
-        <section className="cities__map map" />
+      <section className="cities__map map" />
       </div>
     </div>
   );

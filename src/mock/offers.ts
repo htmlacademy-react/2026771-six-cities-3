@@ -1,4 +1,4 @@
-import { CommentTypeData, CardTypeData, UserTypeData, OfferTypeData, FavoritesTypeData } from '../components/type';
+import { CommentTypeData, CardTypeData, UserTypeData, OfferTypeData } from '../components/type';
 
 export const CARD_MOCK_DATA: CardTypeData[] = [
   {
@@ -421,7 +421,7 @@ export const CARD_NEIGHBOURHOOD_MOCK_DATA: CardTypeData[] = [
     },
     'isFavorite': false,
     'isPremium': false,
-    'rating': 3.8
+    'rating': 5
   }
 ];
 
@@ -500,7 +500,7 @@ export const COMMENT_MOCK_DATA: CommentTypeData[] = [
     'rating': 4
   }];
 
-export const FAVORITES_MOCK_DATA: FavoritesTypeData[] = [
+export const FAVORITES_MOCK_DATA: CardTypeData[] = [
   {
     'id': '6af6f711-c28d-4121-82cd-e0b462a27f00',
     'title': 'Beautiful & luxurious studio at great location',
@@ -519,7 +519,7 @@ export const FAVORITES_MOCK_DATA: FavoritesTypeData[] = [
       'longitude': 4.673877537499948,
       'zoom': 8
     },
-    'isFavorite': false,
+    'isFavorite': true,
     'isPremium': false,
     'rating': 4,
     'previewImage': 'https://url-to-image/image.png'
@@ -542,7 +542,7 @@ export const FAVORITES_MOCK_DATA: FavoritesTypeData[] = [
       'longitude': 4.673877537499948,
       'zoom': 8
     },
-    'isFavorite': false,
+    'isFavorite': true,
     'isPremium': false,
     'rating': 4,
     'previewImage': 'https://url-to-image/image.png'
