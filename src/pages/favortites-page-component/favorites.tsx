@@ -1,7 +1,7 @@
-import { FavoritesTypeData } from '../../components/type';
+import { CardTypeData } from '../../components/type';
 
 type FavoritesProps = {
-  favorites: FavoritesTypeData[];
+  favorites: CardTypeData[];
 
 };
 

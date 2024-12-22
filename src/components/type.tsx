@@ -9,25 +9,25 @@ export interface CommentTypeData {
   rating: number;
 }
 
+type Location = {
+  latitude: number;
+  longitude: number;
+  zoom: number;
+};
+
+type City = {
+    name: string;
+    location: Location;
+  };
+
 export interface CardTypeData {
   id: string;
   title: string;
   type: string;
   price: number;
   previewImage: string;
-  city: {
-    name: string;
-    location: {
-      latitude: number;
-      longitude: number;
-      zoom: number;
-    };
-  };
-  location: {
-    latitude: number;
-    longitude: number;
-    zoom: number;
-  };
+  city: City;
+  location: Location;
   isFavorite: boolean;
   isPremium: boolean;
   rating: number;
@@ -45,19 +45,8 @@ export interface OfferTypeData {
   type: string;
   price: number;
   images: string[];
-  city: {
-    name: string;
-    location: {
-      latitude: number;
-      longitude: number;
-      zoom: number;
-    };
-  };
-  location: {
-    latitude: number;
-    longitude: number;
-    zoom: number;
-  };
+  city: City;
+  location: Location;
   goods: string[];
   host: {
     isPro: boolean;
@@ -71,26 +60,3 @@ export interface OfferTypeData {
   maxAdults: number;
 }
 
-export interface FavoritesTypeData {
-  id: string;
-  title: string;
-  type: string;
-  price: number;
-  city: {
-    name: string;
-    location: {
-      latitude: number;
-      longitude: number;
-      zoom: number;
-    };
-  };
-  location: {
-    latitude: number;
-    longitude: number;
-    zoom: number;
-  };
-  isFavorite: boolean;
-  isPremium: boolean;
-  rating: number;
-  previewImage: string;
-}
