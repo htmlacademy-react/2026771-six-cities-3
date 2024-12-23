@@ -17,7 +17,6 @@ function OfferList({ cardsData, placesCount }: OfferListProps): JSX.Element {
   };
 
   return (
-    <div className="cities__places-container container">
       <section className="cities__places places">
         <h2 className="visually-hidden">Places</h2>
         <b className="places__found">{placesCount} places to stay in Amsterdam</b>
@@ -47,10 +46,6 @@ function OfferList({ cardsData, placesCount }: OfferListProps): JSX.Element {
           ))}
         </div>
       </section>
-      <div className="cities__right-section">
-      <section className="cities__map map" />
-      </div>
-    </div>
   );
 }
 

@@ -31,10 +31,15 @@ function Main({ userData }: MainPageProps): JSX.Element {
           </section>
         </div>
         <div className="cities">
+        <div className="cities__places-container container">
           <OfferList
             cardsData={CARD_MOCK_DATA}
             placesCount={CARD_MOCK_DATA.length}
           />
+          <div className="cities__right-section">
+      <section className="cities__map map" />
+      </div>
+    </div>
         </div>
       </main>
     </div>
