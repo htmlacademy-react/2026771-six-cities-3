@@ -31,6 +31,7 @@ function Main({ userData }: MainPageProps): JSX.Element {
                 <CityName
                   key={city}
                   cityName={city}
+                  selectedCity={selectedCity}
                   onClickCity={() => setSelectedCity(city)}
                 />
               ))}
