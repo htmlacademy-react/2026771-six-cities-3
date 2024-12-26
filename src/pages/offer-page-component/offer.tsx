@@ -13,13 +13,7 @@ type OfferProps = {
 
 function Offer({ userData, offerData, commentData, cardNeighbourhoodData }: OfferProps): JSX.Element {
   const [activeCard, setActiveCard] = useState<string | null>(null);
-  const handleMouseEnter = (id: string) => {
-    setActiveCard(id);
-  };
 
-  const handleMouseLeave = () => {
-    setActiveCard(null);
-  };
 
   const { title, description, type, price, images, goods, host, isPremium, rating, bedrooms, maxAdults } = offerData;
   return (
@@ -118,15 +112,9 @@ function Offer({ userData, offerData, commentData, cardNeighbourhoodData }: Offe
               {cardNeighbourhoodData.map((card) => (
                 <Card
                   key={card.id}
-                  id={card.id}
-                  title={card.title}
-                  type={card.type}
-                  price={card.price}
-                  previewImage={card.previewImage}
-                  isPremium={card.isPremium}
-                  rating={card.rating}
-                  onMouseEnter={() => handleMouseEnter(card.id)}
-                  onMouseLeave={handleMouseLeave}
+                  offer={card}
+                  onMouseMove={(id) => setActiveCard(id)}
+                  variant="vertical"
                   isActive={activeCard === card.id}
                 />
               ))}

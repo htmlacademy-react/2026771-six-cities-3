@@ -3,28 +3,34 @@ import Card from './card';
 import SortTypes from './sort-types';
 import { SORT_TYPES } from '../const';
 import { CardTypeData } from './type';
+import { Map } from './map';
 
 type OfferListProps = {
   cardsData: CardTypeData[];
   placesCount: number;
+  selectedCity: string | null;
 };
 
-function OfferList({ cardsData, placesCount }: OfferListProps): JSX.Element {
+function OfferList({
+  cardsData,
+  placesCount,
+  selectedCity,
+}: OfferListProps): JSX.Element {
   const [activeCard, setActiveCard] = useState<string | null>(null);
 
-  const handleMouseEnter = (id: string) => {
+  const handleMouseMove = (id: string | null) => {
     setActiveCard(id);
   };
 
-  const handleMouseLeave = () => {
-    setActiveCard(null);
-  };
+  const location = cardsData[0]?.location;
 
   return (
     <div className="cities__places-container container">
       <section className="cities__places places">
         <h2 className="visually-hidden">Places</h2>
-        <b className="places__found">{placesCount} places to stay in Amsterdam</b>
+        <b className="places__found">
+          {placesCount} places to stay in {selectedCity}
+        </b>
         <form className="places__sorting" action="#" method="get">
           <span className="places__sorting-caption">Sort by</span>
           <span className="places__sorting-type" tabIndex={0}>
@@ -40,25 +46,25 @@ function OfferList({ cardsData, placesCount }: OfferListProps): JSX.Element {
           </ul>
         </form>
         <div className="cities__places-list places__list tabs__content">
-          {cardsData.map((card) => (
+          {cardsData.map((offer) => (
             <Card
-              key={card.id}
-              id={card.id}
-              title={card.title}
-              type={card.type}
-              price={card.price}
-              previewImage={card.previewImage}
-              isPremium={card.isPremium}
-              rating={card.rating}
-              onMouseEnter={() => handleMouseEnter(card.id)}
-              onMouseLeave={handleMouseLeave}
-              isActive={activeCard === card.id}
+              key={offer.id}
+              offer={offer}
+              onMouseMove={() => handleMouseMove(offer.id)}
+              variant="vertical"
+              isActive={activeCard === offer.id}
             />
           ))}
         </div>
       </section>
       <div className="cities__right-section">
-        <section className="cities__map map" />
+        {location && (
+          <Map
+            location={location}
+            offers={cardsData}
+            activeOfferId={activeCard}
+          />
+        )}
       </div>
     </div>
   );

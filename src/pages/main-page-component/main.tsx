@@ -4,12 +4,18 @@ import OfferList from '../../components/offers-list';
 import { CITIES } from '../../const';
 import { CARD_MOCK_DATA } from '../../mock/offers';
 import { UserTypeData } from '../../components/type';
+import { useState } from 'react';
 
 type MainPageProps = {
   userData: UserTypeData;
 }
 
 function Main({ userData }: MainPageProps): JSX.Element {
+  const [selectedCity, setSelectedCity] = useState<string | null>('Amsterdam');
+
+  const filteredOffers = selectedCity
+    ? CARD_MOCK_DATA.filter((offer) => offer.city.name === selectedCity)
+    : CARD_MOCK_DATA;
   return (
     <div className="page page--gray page--main">
       <Header
@@ -25,6 +31,8 @@ function Main({ userData }: MainPageProps): JSX.Element {
                 <CityName
                   key={city}
                   cityName={city}
+                  selectedCity={selectedCity}
+                  onClickCity={() => setSelectedCity(city)}
                 />
               ))}
             </ul>
@@ -32,8 +40,9 @@ function Main({ userData }: MainPageProps): JSX.Element {
         </div>
         <div className="cities">
           <OfferList
-            cardsData={CARD_MOCK_DATA}
-            placesCount={CARD_MOCK_DATA.length}
+            cardsData={filteredOffers}
+            placesCount={filteredOffers.length}
+            selectedCity={selectedCity}
           />
         </div>
       </main>
