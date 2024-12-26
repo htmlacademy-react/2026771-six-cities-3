@@ -37,7 +37,7 @@ function Card({ offer, onMouseMove, variant, isActive }: CardProps): JSX.Element
 
   return (
     <article
-    className={`${classPrefix}__card place-card ${isActive ? 'place-card--active' : ''}`}
+      className={`${classPrefix}__card place-card ${isActive ? 'place-card--active' : ''}`}
       onMouseEnter={() => onMouseMove(id)}
       onMouseLeave={() => onMouseMove(null)}
     >

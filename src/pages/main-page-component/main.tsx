@@ -11,7 +11,7 @@ type MainPageProps = {
 }
 
 function Main({ userData }: MainPageProps): JSX.Element {
-  const [selectedCity, setSelectedCity] = useState<string | null>("Amsterdam");;
+  const [selectedCity, setSelectedCity] = useState<string | null>('Amsterdam');
 
   const filteredOffers = selectedCity
     ? CARD_MOCK_DATA.filter((offer) => offer.city.name === selectedCity)
@@ -26,23 +26,23 @@ function Main({ userData }: MainPageProps): JSX.Element {
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">
           <section className="locations container">
-          <ul className="locations__list tabs__list">
-  {CITIES.map((city) => (
-    <CityName
-      key={city}
-      cityName={city}
-      onClickCity={() => setSelectedCity(city)}
-    />
-  ))}
-</ul>
+            <ul className="locations__list tabs__list">
+              {CITIES.map((city) => (
+                <CityName
+                  key={city}
+                  cityName={city}
+                  onClickCity={() => setSelectedCity(city)}
+                />
+              ))}
+            </ul>
           </section>
         </div>
         <div className="cities">
-        <OfferList
-    cardsData={filteredOffers}
-    placesCount={filteredOffers.length}
-    selectedCity={selectedCity}
-  />
+          <OfferList
+            cardsData={filteredOffers}
+            placesCount={filteredOffers.length}
+            selectedCity={selectedCity}
+          />
         </div>
       </main>
     </div>

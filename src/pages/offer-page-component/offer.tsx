@@ -109,16 +109,16 @@ function Offer({ userData, offerData, commentData, cardNeighbourhoodData }: Offe
           <section className="near-places places">
             <h2 className="near-places__title">Other places in the neighbourhood</h2>
             <div className="near-places__list places__list">
-  {cardNeighbourhoodData.map((card) => (
-    <Card
-      key={card.id}
-      offer={card}
-      onMouseMove={(id) => setActiveCard(id)}
-      variant="vertical"
-      isActive={activeCard === card.id}
-    />
-  ))}
-</div>
+              {cardNeighbourhoodData.map((card) => (
+                <Card
+                  key={card.id}
+                  offer={card}
+                  onMouseMove={(id) => setActiveCard(id)}
+                  variant="vertical"
+                  isActive={activeCard === card.id}
+                />
+              ))}
+            </div>
           </section>
         </div>
       </main>
