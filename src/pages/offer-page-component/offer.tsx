@@ -3,6 +3,7 @@ import Card from '../../components/card';
 import Header from '../../components/header';
 import { Reviews } from '../../components/review';
 import { UserTypeData, CommentTypeData, CardTypeData, OfferTypeData } from '../../components/type';
+import { Map } from '../../components/map';
 
 type OfferProps = {
   userData: UserTypeData;
@@ -103,7 +104,12 @@ function Offer({ userData, offerData, commentData, cardNeighbourhoodData }: Offe
               </section>
             </div>
           </div>
-          <section className="offer__map map" />
+          <Map
+            location={cardNeighbourhoodData[0].city.location}
+            offers={cardNeighbourhoodData}
+            activeOfferId={activeCard}
+            className="offer__map map"
+          />
         </section>
         <div className="container">
           <section className="near-places places">

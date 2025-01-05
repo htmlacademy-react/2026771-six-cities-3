@@ -356,11 +356,11 @@ export const USER_DATA: UserTypeData = {
 
 export const CARD_NEIGHBOURHOOD_MOCK_DATA: CardTypeData[] = [
   {
-    'id': '057171ea-a922-4df1-a6b6-03b80d70bfc1',
-    'title': 'Wood and stone place',
-    'type': 'hotel',
-    'price': 80,
-    'previewImage': 'img/room.jpg',
+    'id': '89c86da7-f627-42b1-a69b-56ed1280c6d5',
+    'title': 'Nice, cozy, warm big bed apartment',
+    'type': 'apartment',
+    'price': 412,
+    'previewImage': 'https://15.design.htmlacademy.pro/static/hotel/16.jpg',
     'city': {
       'name': 'Dusseldorf',
       'location': {
@@ -370,20 +370,20 @@ export const CARD_NEIGHBOURHOOD_MOCK_DATA: CardTypeData[] = [
       }
     },
     'location': {
-      'latitude': 51.225402,
+      'latitude': 51.236402000000005,
       'longitude': 6.784314,
       'zoom': 16
     },
-    'isFavorite': false,
-    'isPremium': false,
-    'rating': 3.8
+    'isFavorite': true,
+    'isPremium': true,
+    'rating': 4.8
   },
   {
-    'id': '057171ea-a922-4df1-a6b6-03b80d70bfc1',
-    'title': 'Canal View Prinsengracht',
+    'id': 'a9cc5076-0c8a-415f-b7ff-0e1ed7685a5a',
+    'title': 'Waterfront with extraordinary view',
     'type': 'hotel',
-    'price': 132,
-    'previewImage': 'img/apartment-02.jpg',
+    'price': 445,
+    'previewImage': 'https://15.design.htmlacademy.pro/static/hotel/12.jpg',
     'city': {
       'name': 'Dusseldorf',
       'location': {
@@ -393,19 +393,20 @@ export const CARD_NEIGHBOURHOOD_MOCK_DATA: CardTypeData[] = [
       }
     },
     'location': {
-      'latitude': 51.225402,
-      'longitude': 6.784314,
+      'latitude': 51.210402,
+      'longitude': 6.798314,
       'zoom': 16
     },
     'isFavorite': false,
     'isPremium': false,
-    'rating': 3.8
-  }, {
-    'id': '057171ea-a922-4df1-a6b6-03b80d70bfc1',
-    'title': 'Nice, cozy, warm big bed apartment',
-    'type': 'hotel',
-    'price': 180,
-    'previewImage': 'img/apartment-03.jpg',
+    'rating': 2.5
+  },
+  {
+    'id': '59f7390f-a031-47f6-8ca8-774b260fd3a9',
+    'title': 'Wood and stone place',
+    'type': 'room',
+    'price': 292,
+    'previewImage': 'https://15.design.htmlacademy.pro/static/hotel/9.jpg',
     'city': {
       'name': 'Dusseldorf',
       'location': {
@@ -415,14 +416,14 @@ export const CARD_NEIGHBOURHOOD_MOCK_DATA: CardTypeData[] = [
       }
     },
     'location': {
-      'latitude': 51.225402,
-      'longitude': 6.784314,
+      'latitude': 51.211402,
+      'longitude': 6.756314000000001,
       'zoom': 16
     },
     'isFavorite': false,
-    'isPremium': false,
-    'rating': 5
-  }
+    'isPremium': true,
+    'rating': 4.8
+  },
 ];
 
 export const OFFER_MOCK_DATA: OfferTypeData =

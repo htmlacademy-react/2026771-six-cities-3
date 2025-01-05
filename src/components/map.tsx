@@ -10,6 +10,7 @@ type MapProps = {
   location: Location;
   offers: CardTypeData[];
   activeOfferId?: string | null;
+  className: string;
 };
 
 const defaultMarkerIcon = leaflet.icon({
@@ -24,7 +25,7 @@ const activeMarkerIcon = leaflet.icon({
   iconAnchor: [20, 40],
 });
 
-export const Map: React.FC<MapProps> = ({ location, offers, activeOfferId }) => {
+export const Map: React.FC<MapProps> = ({ location, offers, activeOfferId, className }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const map = useMap(mapContainerRef, location);
 
@@ -49,5 +50,5 @@ export const Map: React.FC<MapProps> = ({ location, offers, activeOfferId }) => 
     }
   }, [activeOfferId, map, offers]);
 
-  return <section className="cities__map map" ref={mapContainerRef} />;
+  return <section className={className} ref={mapContainerRef} />;
 };
