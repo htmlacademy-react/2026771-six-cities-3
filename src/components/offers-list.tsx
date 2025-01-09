@@ -22,7 +22,7 @@ function OfferList({
     setActiveCard(id);
   };
 
-  const location = cardsData[0]?.location;
+  const location = cardsData[0]?.city.location;
 
   return (
     <div className="cities__places-container container">
@@ -63,6 +63,7 @@ function OfferList({
             location={location}
             offers={cardsData}
             activeOfferId={activeCard}
+            className="cities__map map"
           />
         )}
       </div>
