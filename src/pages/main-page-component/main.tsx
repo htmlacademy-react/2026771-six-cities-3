@@ -3,18 +3,19 @@ import Header from '../../components/header';
 import OfferList from '../../components/offers-list';
 import { CITIES } from '../../const';
 import { CARD_MOCK_DATA } from '../../mock/offers';
-import { UserTypeData } from '../../components/type';
-import { useState } from 'react';
+import { useAppSelector, useAppDispatch } from '../../hooks';
+import { setCity } from '../../store/action';
 
-type MainPageProps = {
-  userData: UserTypeData;
-}
+function Main(): JSX.Element {
+  const { userData, city } = useAppSelector((state) => state);
+  const dispatch = useAppDispatch();
 
-function Main({ userData }: MainPageProps): JSX.Element {
-  const [selectedCity, setSelectedCity] = useState<string | null>('Amsterdam');
+  const handleCitySelect = (selectedCity: string) => {
+    dispatch(setCity(selectedCity));
+  };
 
-  const filteredOffers = selectedCity
-    ? CARD_MOCK_DATA.filter((offer) => offer.city.name === selectedCity)
+  const filteredOffers = city
+    ? CARD_MOCK_DATA.filter((offer) => offer.city.name === city)
     : CARD_MOCK_DATA;
   return (
     <div className="page page--gray page--main">
@@ -27,12 +28,12 @@ function Main({ userData }: MainPageProps): JSX.Element {
         <div className="tabs">
           <section className="locations container">
             <ul className="locations__list tabs__list">
-              {CITIES.map((city) => (
+              {CITIES.map((cityName) => (
                 <CityName
-                  key={city}
-                  cityName={city}
-                  selectedCity={selectedCity}
-                  onClickCity={() => setSelectedCity(city)}
+                  key={cityName}
+                  cityName={cityName}
+                  selectedCity={city}
+                  onClickCity={() => handleCitySelect(cityName)}
                 />
               ))}
             </ul>
@@ -42,7 +43,7 @@ function Main({ userData }: MainPageProps): JSX.Element {
           <OfferList
             cardsData={filteredOffers}
             placesCount={filteredOffers.length}
-            selectedCity={selectedCity}
+            selectedCity={city}
           />
         </div>
       </main>
