@@ -12,13 +12,13 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store = {store}>
-    <App
-      userData={USER_DATA}
-      offerData={OFFER_MOCK_DATA}
-      cardsData={CARD_MOCK_DATA}
-      commentData={COMMENT_MOCK_DATA}
-      cardNeighbourhoodData={CARD_NEIGHBOURHOOD_MOCK_DATA}
-    />
+      <App
+        userData={USER_DATA}
+        offerData={OFFER_MOCK_DATA}
+        cardsData={CARD_MOCK_DATA}
+        commentData={COMMENT_MOCK_DATA}
+        cardNeighbourhoodData={CARD_NEIGHBOURHOOD_MOCK_DATA}
+      />
     </Provider>
   </React.StrictMode>
 );
