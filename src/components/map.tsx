@@ -49,8 +49,8 @@ export const Map: React.FC<MapProps> = ({ location, offers, activeOfferId, class
             {
               icon:
                offer.id === activeOfferId
-               ? activeMarkerIcon
-               : defaultMarkerIcon,
+                 ? activeMarkerIcon
+                 : defaultMarkerIcon,
             }
           )
           .addTo(markersLayer.current!);
