@@ -2,17 +2,15 @@ import { useState } from 'react';
 import Card from '../../components/card';
 import Header from '../../components/header';
 import { Reviews } from '../../components/review';
-import { UserTypeData, CommentTypeData, CardTypeData, OfferTypeData } from '../../components/type';
 import { Map } from '../../components/map';
+import { useAppSelector } from '../../hooks';
 
-type OfferProps = {
-  userData: UserTypeData;
-  offerData: OfferTypeData;
-  commentData: CommentTypeData[];
-  cardNeighbourhoodData: CardTypeData[];
-};
+function Offer(): JSX.Element {
+  const userData = useAppSelector((state) => state.userData);
+  const offerData = useAppSelector((state) => state.offerData);
+  const commentData = useAppSelector((state) => state.commentData);
+  const cardNeighbourhoodData = useAppSelector((state) => state.cardNeighbourhoodData);
 
-function Offer({ userData, offerData, commentData, cardNeighbourhoodData }: OfferProps): JSX.Element {
   const [activeCard, setActiveCard] = useState<string | null>(null);
 
 

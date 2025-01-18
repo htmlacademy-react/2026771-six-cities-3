@@ -28,9 +28,17 @@ const activeMarkerIcon = leaflet.icon({
 export const Map: React.FC<MapProps> = ({ location, offers, activeOfferId, className }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const map = useMap(mapContainerRef, location);
+  const markersLayer = useRef<leaflet.LayerGroup | null>(null);
 
   useEffect(() => {
     if (map) {
+
+      if (markersLayer.current) {
+        markersLayer.current.clearLayers();
+      } else {
+        markersLayer.current = leaflet.layerGroup().addTo(map);
+      }
+
       offers.forEach((offer) => {
         leaflet
           .marker(
@@ -40,15 +48,20 @@ export const Map: React.FC<MapProps> = ({ location, offers, activeOfferId, class
             },
             {
               icon:
-                offer.id === activeOfferId
-                  ? activeMarkerIcon
-                  : defaultMarkerIcon,
+               offer.id === activeOfferId
+                 ? activeMarkerIcon
+                 : defaultMarkerIcon,
             }
           )
-          .addTo(map);
+          .addTo(markersLayer.current!);
       });
+
+      map.setView(
+        [location.latitude, location.longitude],
+        location.zoom
+      );
     }
-  }, [activeOfferId, map, offers]);
+  }, [activeOfferId, location, map, offers]);
 
   return <section className={className} ref={mapContainerRef} />;
 };
