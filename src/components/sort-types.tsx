@@ -1,12 +1,24 @@
+import { SORT_TYPES } from '../const';
+
 type SortTypesProps = {
   sortType: string;
+  onSortChange: (newSortType: string) => void;
 };
 
-function SortTypes({sortType}: SortTypesProps): JSX.Element {
+function SortTypes({ sortType, onSortChange }: SortTypesProps): JSX.Element {
   return (
-    <li className="places__option" tabIndex={0}>
-      {sortType}
-    </li>
+    <ul className="places__options">
+      {SORT_TYPES.map((type) => (
+        <li
+          key={type}
+          className={`places__option ${type === sortType ? 'places__option--active' : ''}`}
+          onClick={() => onSortChange(type)}
+          tabIndex={0}
+        >
+          {type}
+        </li>
+      ))}
+    </ul>
   );
 }
 

@@ -2,21 +2,18 @@ import CityName from '../../components/city-name';
 import Header from '../../components/header';
 import OfferList from '../../components/offers-list';
 import { CITIES } from '../../const';
-import { CARD_MOCK_DATA } from '../../mock/offers';
 import { useAppSelector, useAppDispatch } from '../../hooks';
 import { setCity } from '../../store/action';
 
 function Main(): JSX.Element {
-  const { userData, city } = useAppSelector((state) => state);
+  const { userData, city, offers } = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
 
   const handleCitySelect = (selectedCity: string) => {
     dispatch(setCity(selectedCity));
   };
 
-  const filteredOffers = city
-    ? CARD_MOCK_DATA.filter((offer) => offer.city.name === city)
-    : CARD_MOCK_DATA;
+  const filteredOffers = offers.filter((offer) => offer.city.name === city);
   return (
     <div className="page page--gray page--main">
       <Header
